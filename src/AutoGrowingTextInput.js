@@ -60,7 +60,7 @@ export default class AutoGrowingTextInput extends Component {
         multiline={true}
         {...this.props} {...this.style}
         style={[this.props.style, {height: this._getValidHeight(this.state.height), flex: 1}]}
-        onContentSizeChange={this._onContentSizeChangeAndroid}
+        //onContentSizeChange={this._onContentSizeChangeAndroid}
         onChange={this._onChangeAndroid}
         ref={(r) => { this._textInput = r; }}
       />
@@ -103,9 +103,9 @@ export default class AutoGrowingTextInput extends Component {
   }
 
   _onChangeAndroid(event) {
-    if(!this.state.androidFirstContentSizeChange) {
+    //if(!this.state.androidFirstContentSizeChange) {
       this._handleNativeEvent(event.nativeEvent);
-    }
+    //}
     if (this.props.onChange) {
       this.props.onChange(event);
     }
